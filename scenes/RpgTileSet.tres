@@ -1,0 +1,785 @@
+[gd_resource type="TileSet" load_steps=78 format=2]
+
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile01.png" type="Texture" id=1]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile02.png" type="Texture" id=2]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile11.png" type="Texture" id=3]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile12.png" type="Texture" id=4]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile13.png" type="Texture" id=5]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile14.png" type="Texture" id=6]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile15.png" type="Texture" id=7]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile16.png" type="Texture" id=8]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile17.png" type="Texture" id=9]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile18.png" type="Texture" id=10]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile19.png" type="Texture" id=11]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile20.png" type="Texture" id=12]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile03.png" type="Texture" id=13]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile21.png" type="Texture" id=14]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile22.png" type="Texture" id=15]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile23.png" type="Texture" id=16]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile24.png" type="Texture" id=17]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile25.png" type="Texture" id=18]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile26.png" type="Texture" id=19]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile27.png" type="Texture" id=20]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile28.png" type="Texture" id=21]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile29.png" type="Texture" id=22]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile30.png" type="Texture" id=23]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile04.png" type="Texture" id=24]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile31.png" type="Texture" id=25]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile32.png" type="Texture" id=26]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile33.png" type="Texture" id=27]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile34.png" type="Texture" id=28]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile35.png" type="Texture" id=29]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile37.png" type="Texture" id=30]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile38.png" type="Texture" id=31]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile39.png" type="Texture" id=32]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile40.png" type="Texture" id=33]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile05.png" type="Texture" id=34]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile41.png" type="Texture" id=35]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile42.png" type="Texture" id=36]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile43.png" type="Texture" id=37]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile44.png" type="Texture" id=38]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile45.png" type="Texture" id=39]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile46.png" type="Texture" id=40]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile47.png" type="Texture" id=41]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile48.png" type="Texture" id=42]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile49.png" type="Texture" id=43]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile50.png" type="Texture" id=44]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile06.png" type="Texture" id=45]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile51.png" type="Texture" id=46]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile52.png" type="Texture" id=47]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile53.png" type="Texture" id=48]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile54.png" type="Texture" id=49]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile55.png" type="Texture" id=50]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile56.png" type="Texture" id=51]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile57.png" type="Texture" id=52]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile58.png" type="Texture" id=53]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile59.png" type="Texture" id=54]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile60.png" type="Texture" id=55]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile07.png" type="Texture" id=56]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile61.png" type="Texture" id=57]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile62.png" type="Texture" id=58]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile63.png" type="Texture" id=59]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile64.png" type="Texture" id=60]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile65.png" type="Texture" id=61]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile66.png" type="Texture" id=62]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile67.png" type="Texture" id=63]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile68.png" type="Texture" id=64]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile69.png" type="Texture" id=65]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile70.png" type="Texture" id=66]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile08.png" type="Texture" id=67]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile71.png" type="Texture" id=68]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile-waterfall01.png" type="Texture" id=69]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile-waterfall02.png" type="Texture" id=70]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile-waterfall03.png" type="Texture" id=71]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile-waterfall04.png" type="Texture" id=72]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile-waterfall05.png" type="Texture" id=73]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile-waterfall06.png" type="Texture" id=74]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile-waterfall07.png" type="Texture" id=75]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile09.png" type="Texture" id=76]
+[ext_resource path="res://images/rpg-pack/tiles/generic-rpg-tile10.png" type="Texture" id=77]
+
+[resource]
+
+0/name = "generic-rpg-tile01"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/is_autotile = false
+0/occluder_offset = Vector2( 8, 8 )
+0/navigation_offset = Vector2( 8, 8 )
+0/shapes = [  ]
+1/name = "generic-rpg-tile02"
+1/texture = ExtResource( 2 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 16, 16 )
+1/is_autotile = false
+1/occluder_offset = Vector2( 8, 8 )
+1/navigation_offset = Vector2( 8, 8 )
+1/shapes = [  ]
+2/name = "generic-rpg-tile03"
+2/texture = ExtResource( 13 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 16, 16 )
+2/is_autotile = false
+2/occluder_offset = Vector2( 8, 8 )
+2/navigation_offset = Vector2( 8, 8 )
+2/shapes = [  ]
+3/name = "generic-rpg-tile04"
+3/texture = ExtResource( 24 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 16, 16 )
+3/is_autotile = false
+3/occluder_offset = Vector2( 8, 8 )
+3/navigation_offset = Vector2( 8, 8 )
+3/shapes = [  ]
+4/name = "generic-rpg-tile05"
+4/texture = ExtResource( 34 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 16, 16 )
+4/is_autotile = false
+4/occluder_offset = Vector2( 8, 8 )
+4/navigation_offset = Vector2( 8, 8 )
+4/shapes = [  ]
+5/name = "generic-rpg-tile06"
+5/texture = ExtResource( 45 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 16, 16 )
+5/is_autotile = false
+5/occluder_offset = Vector2( 8, 8 )
+5/navigation_offset = Vector2( 8, 8 )
+5/shapes = [  ]
+6/name = "generic-rpg-tile07"
+6/texture = ExtResource( 56 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 16, 16 )
+6/is_autotile = false
+6/occluder_offset = Vector2( 8, 8 )
+6/navigation_offset = Vector2( 8, 8 )
+6/shapes = [  ]
+7/name = "generic-rpg-tile08"
+7/texture = ExtResource( 67 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 16, 16 )
+7/is_autotile = false
+7/occluder_offset = Vector2( 8, 8 )
+7/navigation_offset = Vector2( 8, 8 )
+7/shapes = [  ]
+8/name = "generic-rpg-tile09"
+8/texture = ExtResource( 76 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 16, 16 )
+8/is_autotile = false
+8/occluder_offset = Vector2( 8, 8 )
+8/navigation_offset = Vector2( 8, 8 )
+8/shapes = [  ]
+9/name = "generic-rpg-tile10"
+9/texture = ExtResource( 77 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 16, 16 )
+9/is_autotile = false
+9/occluder_offset = Vector2( 8, 8 )
+9/navigation_offset = Vector2( 8, 8 )
+9/shapes = [  ]
+10/name = "generic-rpg-tile11"
+10/texture = ExtResource( 3 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 16, 16 )
+10/is_autotile = false
+10/occluder_offset = Vector2( 8, 8 )
+10/navigation_offset = Vector2( 8, 8 )
+10/shapes = [  ]
+11/name = "generic-rpg-tile12"
+11/texture = ExtResource( 4 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 0, 0, 16, 16 )
+11/is_autotile = false
+11/occluder_offset = Vector2( 8, 8 )
+11/navigation_offset = Vector2( 8, 8 )
+11/shapes = [  ]
+12/name = "generic-rpg-tile13"
+12/texture = ExtResource( 5 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 0, 0, 16, 16 )
+12/is_autotile = false
+12/occluder_offset = Vector2( 8, 8 )
+12/navigation_offset = Vector2( 8, 8 )
+12/shapes = [  ]
+13/name = "generic-rpg-tile14"
+13/texture = ExtResource( 6 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 0, 0, 16, 16 )
+13/is_autotile = false
+13/occluder_offset = Vector2( 8, 8 )
+13/navigation_offset = Vector2( 8, 8 )
+13/shapes = [  ]
+14/name = "generic-rpg-tile15"
+14/texture = ExtResource( 7 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 16, 16 )
+14/is_autotile = false
+14/occluder_offset = Vector2( 8, 8 )
+14/navigation_offset = Vector2( 8, 8 )
+14/shapes = [  ]
+15/name = "generic-rpg-tile16"
+15/texture = ExtResource( 8 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 0, 0, 16, 16 )
+15/is_autotile = false
+15/occluder_offset = Vector2( 8, 8 )
+15/navigation_offset = Vector2( 8, 8 )
+15/shapes = [  ]
+16/name = "generic-rpg-tile17"
+16/texture = ExtResource( 9 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 0, 0, 16, 16 )
+16/is_autotile = false
+16/occluder_offset = Vector2( 8, 8 )
+16/navigation_offset = Vector2( 8, 8 )
+16/shapes = [  ]
+17/name = "generic-rpg-tile18"
+17/texture = ExtResource( 10 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 0, 16, 16 )
+17/is_autotile = false
+17/occluder_offset = Vector2( 8, 8 )
+17/navigation_offset = Vector2( 8, 8 )
+17/shapes = [  ]
+18/name = "generic-rpg-tile19"
+18/texture = ExtResource( 11 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 0, 0, 16, 16 )
+18/is_autotile = false
+18/occluder_offset = Vector2( 8, 8 )
+18/navigation_offset = Vector2( 8, 8 )
+18/shapes = [  ]
+19/name = "generic-rpg-tile20"
+19/texture = ExtResource( 12 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 0, 0, 16, 16 )
+19/is_autotile = false
+19/occluder_offset = Vector2( 8, 8 )
+19/navigation_offset = Vector2( 8, 8 )
+19/shapes = [  ]
+20/name = "generic-rpg-tile21"
+20/texture = ExtResource( 14 )
+20/tex_offset = Vector2( 0, 0 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 0, 0, 16, 16 )
+20/is_autotile = false
+20/occluder_offset = Vector2( 8, 8 )
+20/navigation_offset = Vector2( 8, 8 )
+20/shapes = [  ]
+21/name = "generic-rpg-tile22"
+21/texture = ExtResource( 15 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 0, 0, 16, 16 )
+21/is_autotile = false
+21/occluder_offset = Vector2( 8, 8 )
+21/navigation_offset = Vector2( 8, 8 )
+21/shapes = [  ]
+22/name = "generic-rpg-tile23"
+22/texture = ExtResource( 16 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 0, 0, 16, 16 )
+22/is_autotile = false
+22/occluder_offset = Vector2( 8, 8 )
+22/navigation_offset = Vector2( 8, 8 )
+22/shapes = [  ]
+23/name = "generic-rpg-tile24"
+23/texture = ExtResource( 17 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 0, 0, 16, 16 )
+23/is_autotile = false
+23/occluder_offset = Vector2( 8, 8 )
+23/navigation_offset = Vector2( 8, 8 )
+23/shapes = [  ]
+24/name = "generic-rpg-tile25"
+24/texture = ExtResource( 18 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 0, 0, 16, 16 )
+24/is_autotile = false
+24/occluder_offset = Vector2( 8, 8 )
+24/navigation_offset = Vector2( 8, 8 )
+24/shapes = [  ]
+25/name = "generic-rpg-tile26"
+25/texture = ExtResource( 19 )
+25/tex_offset = Vector2( 0, 0 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 0, 0, 16, 16 )
+25/is_autotile = false
+25/occluder_offset = Vector2( 8, 8 )
+25/navigation_offset = Vector2( 8, 8 )
+25/shapes = [  ]
+26/name = "generic-rpg-tile27"
+26/texture = ExtResource( 20 )
+26/tex_offset = Vector2( 0, 0 )
+26/modulate = Color( 1, 1, 1, 1 )
+26/region = Rect2( 0, 0, 16, 16 )
+26/is_autotile = false
+26/occluder_offset = Vector2( 8, 8 )
+26/navigation_offset = Vector2( 8, 8 )
+26/shapes = [  ]
+27/name = "generic-rpg-tile28"
+27/texture = ExtResource( 21 )
+27/tex_offset = Vector2( 0, 0 )
+27/modulate = Color( 1, 1, 1, 1 )
+27/region = Rect2( 0, 0, 16, 16 )
+27/is_autotile = false
+27/occluder_offset = Vector2( 8, 8 )
+27/navigation_offset = Vector2( 8, 8 )
+27/shapes = [  ]
+28/name = "generic-rpg-tile29"
+28/texture = ExtResource( 22 )
+28/tex_offset = Vector2( 0, 0 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 0, 0, 16, 16 )
+28/is_autotile = false
+28/occluder_offset = Vector2( 8, 8 )
+28/navigation_offset = Vector2( 8, 8 )
+28/shapes = [  ]
+29/name = "generic-rpg-tile30"
+29/texture = ExtResource( 23 )
+29/tex_offset = Vector2( 0, 0 )
+29/modulate = Color( 1, 1, 1, 1 )
+29/region = Rect2( 0, 0, 16, 16 )
+29/is_autotile = false
+29/occluder_offset = Vector2( 8, 8 )
+29/navigation_offset = Vector2( 8, 8 )
+29/shapes = [  ]
+30/name = "generic-rpg-tile31"
+30/texture = ExtResource( 25 )
+30/tex_offset = Vector2( 0, 0 )
+30/modulate = Color( 1, 1, 1, 1 )
+30/region = Rect2( 0, 0, 16, 16 )
+30/is_autotile = false
+30/occluder_offset = Vector2( 8, 8 )
+30/navigation_offset = Vector2( 8, 8 )
+30/shapes = [  ]
+31/name = "generic-rpg-tile32"
+31/texture = ExtResource( 26 )
+31/tex_offset = Vector2( 0, 0 )
+31/modulate = Color( 1, 1, 1, 1 )
+31/region = Rect2( 0, 0, 16, 16 )
+31/is_autotile = false
+31/occluder_offset = Vector2( 8, 8 )
+31/navigation_offset = Vector2( 8, 8 )
+31/shapes = [  ]
+32/name = "generic-rpg-tile33"
+32/texture = ExtResource( 27 )
+32/tex_offset = Vector2( 0, 0 )
+32/modulate = Color( 1, 1, 1, 1 )
+32/region = Rect2( 0, 0, 16, 16 )
+32/is_autotile = false
+32/occluder_offset = Vector2( 8, 8 )
+32/navigation_offset = Vector2( 8, 8 )
+32/shapes = [  ]
+33/name = "generic-rpg-tile34"
+33/texture = ExtResource( 28 )
+33/tex_offset = Vector2( 0, 0 )
+33/modulate = Color( 1, 1, 1, 1 )
+33/region = Rect2( 0, 0, 16, 16 )
+33/is_autotile = false
+33/occluder_offset = Vector2( 8, 8 )
+33/navigation_offset = Vector2( 8, 8 )
+33/shapes = [  ]
+34/name = "generic-rpg-tile35"
+34/texture = ExtResource( 29 )
+34/tex_offset = Vector2( 0, 0 )
+34/modulate = Color( 1, 1, 1, 1 )
+34/region = Rect2( 0, 0, 16, 16 )
+34/is_autotile = false
+34/occluder_offset = Vector2( 8, 8 )
+34/navigation_offset = Vector2( 8, 8 )
+34/shapes = [  ]
+35/name = "generic-rpg-tile36"
+35/texture = ExtResource( 29 )
+35/tex_offset = Vector2( 0, 0 )
+35/modulate = Color( 1, 1, 1, 1 )
+35/region = Rect2( 0, 0, 16, 16 )
+35/is_autotile = false
+35/occluder_offset = Vector2( 8, 8 )
+35/navigation_offset = Vector2( 8, 8 )
+35/shapes = [  ]
+36/name = "generic-rpg-tile37"
+36/texture = ExtResource( 30 )
+36/tex_offset = Vector2( 0, 0 )
+36/modulate = Color( 1, 1, 1, 1 )
+36/region = Rect2( 0, 0, 16, 16 )
+36/is_autotile = false
+36/occluder_offset = Vector2( 8, 8 )
+36/navigation_offset = Vector2( 8, 8 )
+36/shapes = [  ]
+37/name = "generic-rpg-tile38"
+37/texture = ExtResource( 31 )
+37/tex_offset = Vector2( 0, 0 )
+37/modulate = Color( 1, 1, 1, 1 )
+37/region = Rect2( 0, 0, 16, 16 )
+37/is_autotile = false
+37/occluder_offset = Vector2( 8, 8 )
+37/navigation_offset = Vector2( 8, 8 )
+37/shapes = [  ]
+38/name = "generic-rpg-tile39"
+38/texture = ExtResource( 32 )
+38/tex_offset = Vector2( 0, 0 )
+38/modulate = Color( 1, 1, 1, 1 )
+38/region = Rect2( 0, 0, 16, 16 )
+38/is_autotile = false
+38/occluder_offset = Vector2( 8, 8 )
+38/navigation_offset = Vector2( 8, 8 )
+38/shapes = [  ]
+39/name = "generic-rpg-tile40"
+39/texture = ExtResource( 33 )
+39/tex_offset = Vector2( 0, 0 )
+39/modulate = Color( 1, 1, 1, 1 )
+39/region = Rect2( 0, 0, 16, 16 )
+39/is_autotile = false
+39/occluder_offset = Vector2( 8, 8 )
+39/navigation_offset = Vector2( 8, 8 )
+39/shapes = [  ]
+40/name = "generic-rpg-tile41"
+40/texture = ExtResource( 35 )
+40/tex_offset = Vector2( 0, 0 )
+40/modulate = Color( 1, 1, 1, 1 )
+40/region = Rect2( 0, 0, 16, 16 )
+40/is_autotile = false
+40/occluder_offset = Vector2( 8, 8 )
+40/navigation_offset = Vector2( 8, 8 )
+40/shapes = [  ]
+41/name = "generic-rpg-tile42"
+41/texture = ExtResource( 36 )
+41/tex_offset = Vector2( 0, 0 )
+41/modulate = Color( 1, 1, 1, 1 )
+41/region = Rect2( 0, 0, 16, 16 )
+41/is_autotile = false
+41/occluder_offset = Vector2( 8, 8 )
+41/navigation_offset = Vector2( 8, 8 )
+41/shapes = [  ]
+42/name = "generic-rpg-tile43"
+42/texture = ExtResource( 37 )
+42/tex_offset = Vector2( 0, 0 )
+42/modulate = Color( 1, 1, 1, 1 )
+42/region = Rect2( 0, 0, 16, 16 )
+42/is_autotile = false
+42/occluder_offset = Vector2( 8, 8 )
+42/navigation_offset = Vector2( 8, 8 )
+42/shapes = [  ]
+43/name = "generic-rpg-tile44"
+43/texture = ExtResource( 38 )
+43/tex_offset = Vector2( 0, 0 )
+43/modulate = Color( 1, 1, 1, 1 )
+43/region = Rect2( 0, 0, 16, 16 )
+43/is_autotile = false
+43/occluder_offset = Vector2( 8, 8 )
+43/navigation_offset = Vector2( 8, 8 )
+43/shapes = [  ]
+44/name = "generic-rpg-tile45"
+44/texture = ExtResource( 39 )
+44/tex_offset = Vector2( 0, 0 )
+44/modulate = Color( 1, 1, 1, 1 )
+44/region = Rect2( 0, 0, 16, 16 )
+44/is_autotile = false
+44/occluder_offset = Vector2( 8, 8 )
+44/navigation_offset = Vector2( 8, 8 )
+44/shapes = [  ]
+45/name = "generic-rpg-tile46"
+45/texture = ExtResource( 40 )
+45/tex_offset = Vector2( 0, 0 )
+45/modulate = Color( 1, 1, 1, 1 )
+45/region = Rect2( 0, 0, 16, 16 )
+45/is_autotile = false
+45/occluder_offset = Vector2( 8, 8 )
+45/navigation_offset = Vector2( 8, 8 )
+45/shapes = [  ]
+46/name = "generic-rpg-tile47"
+46/texture = ExtResource( 41 )
+46/tex_offset = Vector2( 0, 0 )
+46/modulate = Color( 1, 1, 1, 1 )
+46/region = Rect2( 0, 0, 16, 16 )
+46/is_autotile = false
+46/occluder_offset = Vector2( 8, 8 )
+46/navigation_offset = Vector2( 8, 8 )
+46/shapes = [  ]
+47/name = "generic-rpg-tile48"
+47/texture = ExtResource( 42 )
+47/tex_offset = Vector2( 0, 0 )
+47/modulate = Color( 1, 1, 1, 1 )
+47/region = Rect2( 0, 0, 16, 16 )
+47/is_autotile = false
+47/occluder_offset = Vector2( 8, 8 )
+47/navigation_offset = Vector2( 8, 8 )
+47/shapes = [  ]
+48/name = "generic-rpg-tile49"
+48/texture = ExtResource( 43 )
+48/tex_offset = Vector2( 0, 0 )
+48/modulate = Color( 1, 1, 1, 1 )
+48/region = Rect2( 0, 0, 16, 16 )
+48/is_autotile = false
+48/occluder_offset = Vector2( 8, 8 )
+48/navigation_offset = Vector2( 8, 8 )
+48/shapes = [  ]
+49/name = "generic-rpg-tile50"
+49/texture = ExtResource( 44 )
+49/tex_offset = Vector2( 0, 0 )
+49/modulate = Color( 1, 1, 1, 1 )
+49/region = Rect2( 0, 0, 16, 16 )
+49/is_autotile = false
+49/occluder_offset = Vector2( 8, 8 )
+49/navigation_offset = Vector2( 8, 8 )
+49/shapes = [  ]
+50/name = "generic-rpg-tile51"
+50/texture = ExtResource( 46 )
+50/tex_offset = Vector2( 0, 0 )
+50/modulate = Color( 1, 1, 1, 1 )
+50/region = Rect2( 0, 0, 16, 16 )
+50/is_autotile = false
+50/occluder_offset = Vector2( 8, 8 )
+50/navigation_offset = Vector2( 8, 8 )
+50/shapes = [  ]
+51/name = "generic-rpg-tile52"
+51/texture = ExtResource( 47 )
+51/tex_offset = Vector2( 0, 0 )
+51/modulate = Color( 1, 1, 1, 1 )
+51/region = Rect2( 0, 0, 16, 16 )
+51/is_autotile = false
+51/occluder_offset = Vector2( 8, 8 )
+51/navigation_offset = Vector2( 8, 8 )
+51/shapes = [  ]
+52/name = "generic-rpg-tile53"
+52/texture = ExtResource( 48 )
+52/tex_offset = Vector2( 0, 0 )
+52/modulate = Color( 1, 1, 1, 1 )
+52/region = Rect2( 0, 0, 16, 16 )
+52/is_autotile = false
+52/occluder_offset = Vector2( 8, 8 )
+52/navigation_offset = Vector2( 8, 8 )
+52/shapes = [  ]
+53/name = "generic-rpg-tile54"
+53/texture = ExtResource( 49 )
+53/tex_offset = Vector2( 0, 0 )
+53/modulate = Color( 1, 1, 1, 1 )
+53/region = Rect2( 0, 0, 16, 16 )
+53/is_autotile = false
+53/occluder_offset = Vector2( 8, 8 )
+53/navigation_offset = Vector2( 8, 8 )
+53/shapes = [  ]
+54/name = "generic-rpg-tile55"
+54/texture = ExtResource( 50 )
+54/tex_offset = Vector2( 0, 0 )
+54/modulate = Color( 1, 1, 1, 1 )
+54/region = Rect2( 0, 0, 16, 16 )
+54/is_autotile = false
+54/occluder_offset = Vector2( 8, 8 )
+54/navigation_offset = Vector2( 8, 8 )
+54/shapes = [  ]
+55/name = "generic-rpg-tile56"
+55/texture = ExtResource( 51 )
+55/tex_offset = Vector2( 0, 0 )
+55/modulate = Color( 1, 1, 1, 1 )
+55/region = Rect2( 0, 0, 16, 16 )
+55/is_autotile = false
+55/occluder_offset = Vector2( 8, 8 )
+55/navigation_offset = Vector2( 8, 8 )
+55/shapes = [  ]
+56/name = "generic-rpg-tile57"
+56/texture = ExtResource( 52 )
+56/tex_offset = Vector2( 0, 0 )
+56/modulate = Color( 1, 1, 1, 1 )
+56/region = Rect2( 0, 0, 16, 16 )
+56/is_autotile = false
+56/occluder_offset = Vector2( 8, 8 )
+56/navigation_offset = Vector2( 8, 8 )
+56/shapes = [  ]
+57/name = "generic-rpg-tile58"
+57/texture = ExtResource( 53 )
+57/tex_offset = Vector2( 0, 0 )
+57/modulate = Color( 1, 1, 1, 1 )
+57/region = Rect2( 0, 0, 16, 16 )
+57/is_autotile = false
+57/occluder_offset = Vector2( 8, 8 )
+57/navigation_offset = Vector2( 8, 8 )
+57/shapes = [  ]
+58/name = "generic-rpg-tile59"
+58/texture = ExtResource( 54 )
+58/tex_offset = Vector2( 0, 0 )
+58/modulate = Color( 1, 1, 1, 1 )
+58/region = Rect2( 0, 0, 16, 16 )
+58/is_autotile = false
+58/occluder_offset = Vector2( 8, 8 )
+58/navigation_offset = Vector2( 8, 8 )
+58/shapes = [  ]
+59/name = "generic-rpg-tile60"
+59/texture = ExtResource( 55 )
+59/tex_offset = Vector2( 0, 0 )
+59/modulate = Color( 1, 1, 1, 1 )
+59/region = Rect2( 0, 0, 16, 16 )
+59/is_autotile = false
+59/occluder_offset = Vector2( 8, 8 )
+59/navigation_offset = Vector2( 8, 8 )
+59/shapes = [  ]
+60/name = "generic-rpg-tile61"
+60/texture = ExtResource( 57 )
+60/tex_offset = Vector2( 0, 0 )
+60/modulate = Color( 1, 1, 1, 1 )
+60/region = Rect2( 0, 0, 16, 16 )
+60/is_autotile = false
+60/occluder_offset = Vector2( 8, 8 )
+60/navigation_offset = Vector2( 8, 8 )
+60/shapes = [  ]
+61/name = "generic-rpg-tile62"
+61/texture = ExtResource( 58 )
+61/tex_offset = Vector2( 0, 0 )
+61/modulate = Color( 1, 1, 1, 1 )
+61/region = Rect2( 0, 0, 16, 16 )
+61/is_autotile = false
+61/occluder_offset = Vector2( 8, 8 )
+61/navigation_offset = Vector2( 8, 8 )
+61/shapes = [  ]
+62/name = "generic-rpg-tile63"
+62/texture = ExtResource( 59 )
+62/tex_offset = Vector2( 0, 0 )
+62/modulate = Color( 1, 1, 1, 1 )
+62/region = Rect2( 0, 0, 16, 16 )
+62/is_autotile = false
+62/occluder_offset = Vector2( 8, 8 )
+62/navigation_offset = Vector2( 8, 8 )
+62/shapes = [  ]
+63/name = "generic-rpg-tile64"
+63/texture = ExtResource( 60 )
+63/tex_offset = Vector2( 0, 0 )
+63/modulate = Color( 1, 1, 1, 1 )
+63/region = Rect2( 0, 0, 16, 16 )
+63/is_autotile = false
+63/occluder_offset = Vector2( 8, 8 )
+63/navigation_offset = Vector2( 8, 8 )
+63/shapes = [  ]
+64/name = "generic-rpg-tile65"
+64/texture = ExtResource( 61 )
+64/tex_offset = Vector2( 0, 0 )
+64/modulate = Color( 1, 1, 1, 1 )
+64/region = Rect2( 0, 0, 16, 16 )
+64/is_autotile = false
+64/occluder_offset = Vector2( 8, 8 )
+64/navigation_offset = Vector2( 8, 8 )
+64/shapes = [  ]
+65/name = "generic-rpg-tile66"
+65/texture = ExtResource( 62 )
+65/tex_offset = Vector2( 0, 0 )
+65/modulate = Color( 1, 1, 1, 1 )
+65/region = Rect2( 0, 0, 16, 16 )
+65/is_autotile = false
+65/occluder_offset = Vector2( 8, 8 )
+65/navigation_offset = Vector2( 8, 8 )
+65/shapes = [  ]
+66/name = "generic-rpg-tile67"
+66/texture = ExtResource( 63 )
+66/tex_offset = Vector2( 0, 0 )
+66/modulate = Color( 1, 1, 1, 1 )
+66/region = Rect2( 0, 0, 16, 16 )
+66/is_autotile = false
+66/occluder_offset = Vector2( 8, 8 )
+66/navigation_offset = Vector2( 8, 8 )
+66/shapes = [  ]
+67/name = "generic-rpg-tile68"
+67/texture = ExtResource( 64 )
+67/tex_offset = Vector2( 0, 0 )
+67/modulate = Color( 1, 1, 1, 1 )
+67/region = Rect2( 0, 0, 16, 16 )
+67/is_autotile = false
+67/occluder_offset = Vector2( 8, 8 )
+67/navigation_offset = Vector2( 8, 8 )
+67/shapes = [  ]
+68/name = "generic-rpg-tile69"
+68/texture = ExtResource( 65 )
+68/tex_offset = Vector2( 0, 0 )
+68/modulate = Color( 1, 1, 1, 1 )
+68/region = Rect2( 0, 0, 16, 16 )
+68/is_autotile = false
+68/occluder_offset = Vector2( 8, 8 )
+68/navigation_offset = Vector2( 8, 8 )
+68/shapes = [  ]
+69/name = "generic-rpg-tile70"
+69/texture = ExtResource( 66 )
+69/tex_offset = Vector2( 0, 0 )
+69/modulate = Color( 1, 1, 1, 1 )
+69/region = Rect2( 0, 0, 16, 16 )
+69/is_autotile = false
+69/occluder_offset = Vector2( 8, 8 )
+69/navigation_offset = Vector2( 8, 8 )
+69/shapes = [  ]
+70/name = "generic-rpg-tile71"
+70/texture = ExtResource( 68 )
+70/tex_offset = Vector2( 0, 0 )
+70/modulate = Color( 1, 1, 1, 1 )
+70/region = Rect2( 0, 0, 16, 16 )
+70/is_autotile = false
+70/occluder_offset = Vector2( 8, 8 )
+70/navigation_offset = Vector2( 8, 8 )
+70/shapes = [  ]
+71/name = "generic-rpg-tile72"
+71/texture = ExtResource( 69 )
+71/tex_offset = Vector2( 0, 0 )
+71/modulate = Color( 1, 1, 1, 1 )
+71/region = Rect2( 0, 0, 16, 16 )
+71/is_autotile = false
+71/occluder_offset = Vector2( 8, 8 )
+71/navigation_offset = Vector2( 8, 8 )
+71/shapes = [  ]
+72/name = "generic-rpg-tile73"
+72/texture = ExtResource( 70 )
+72/tex_offset = Vector2( 0, 0 )
+72/modulate = Color( 1, 1, 1, 1 )
+72/region = Rect2( 0, 0, 16, 16 )
+72/is_autotile = false
+72/occluder_offset = Vector2( 8, 8 )
+72/navigation_offset = Vector2( 8, 8 )
+72/shapes = [  ]
+73/name = "generic-rpg-tile74"
+73/texture = ExtResource( 71 )
+73/tex_offset = Vector2( 0, 0 )
+73/modulate = Color( 1, 1, 1, 1 )
+73/region = Rect2( 0, 0, 16, 16 )
+73/is_autotile = false
+73/occluder_offset = Vector2( 8, 8 )
+73/navigation_offset = Vector2( 8, 8 )
+73/shapes = [  ]
+74/name = "generic-rpg-tile75"
+74/texture = ExtResource( 72 )
+74/tex_offset = Vector2( 0, 0 )
+74/modulate = Color( 1, 1, 1, 1 )
+74/region = Rect2( 0, 0, 16, 16 )
+74/is_autotile = false
+74/occluder_offset = Vector2( 8, 8 )
+74/navigation_offset = Vector2( 8, 8 )
+74/shapes = [  ]
+75/name = "generic-rpg-tile76"
+75/texture = ExtResource( 73 )
+75/tex_offset = Vector2( 0, 0 )
+75/modulate = Color( 1, 1, 1, 1 )
+75/region = Rect2( 0, 0, 16, 16 )
+75/is_autotile = false
+75/occluder_offset = Vector2( 8, 8 )
+75/navigation_offset = Vector2( 8, 8 )
+75/shapes = [  ]
+76/name = "generic-rpg-tile77"
+76/texture = ExtResource( 74 )
+76/tex_offset = Vector2( 0, 0 )
+76/modulate = Color( 1, 1, 1, 1 )
+76/region = Rect2( 0, 0, 16, 16 )
+76/is_autotile = false
+76/occluder_offset = Vector2( 8, 8 )
+76/navigation_offset = Vector2( 8, 8 )
+76/shapes = [  ]
+77/name = "generic-rpg-tile78"
+77/texture = ExtResource( 75 )
+77/tex_offset = Vector2( 0, 0 )
+77/modulate = Color( 1, 1, 1, 1 )
+77/region = Rect2( 0, 0, 16, 16 )
+77/is_autotile = false
+77/occluder_offset = Vector2( 8, 8 )
+77/navigation_offset = Vector2( 8, 8 )
+77/shapes = [  ]
+
