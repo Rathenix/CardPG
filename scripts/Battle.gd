@@ -6,10 +6,12 @@ signal showHand
 signal hideHand
 signal highlightCard
 signal drawCard
+signal playCard
 
 onready var hand = $Hand
 onready var handTween = $HandTween
 onready var cursor = $cursor
+onready var fade = $CanvasLayer/Fade
 
 var handShowing = false
 var selectedCardIndex = 0
@@ -21,8 +23,18 @@ var cursorLocationScry = Vector2(25, 166)
 var cursorLocationDraw = Vector2(120, 150)
 var cursorLocationFlee = Vector2(120, 166)
 
+var sceneLoaded = false
+
 func _ready():
+	fade.visible = true
+	var fade_tween = fade.get_node("FadeTween")
+	fade_tween.interpolate_property(fade, "self_modulate", Color(0, 0, 0, 1), Color(0, 0, 0, 0), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	fade_tween.start()
+	set_process(false)
+
+func setupHand():
 	cursor.position = cursorLocationPlay
+	cursor.visible = true
 	for i in range(startingHandSize):
 		Draw()
 	selectedCardIndex = 0
@@ -73,7 +85,7 @@ func get_input():
 			selectedCardIndex -= 1
 			emit_signal("highlightCard", selectedCardIndex)
 		if Input.is_action_just_pressed('select'):
-			pass
+			emit_signal("playCard", selectedCardIndex)
 		if Input.is_action_just_pressed('back'):
 			handShowing = false
 			emit_signal("hideHand")
@@ -94,4 +106,15 @@ func Draw():
 	selectedCardIndex = cardsInHand - 1
 
 func Flee():
-	game_manager.load_new_scene("overworld")
+	var fade_tween = fade.get_node("FadeTween")
+	fade_tween.interpolate_property(fade, "self_modulate", Color(0, 0, 0, 0), Color(0, 0, 0, 1), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	fade_tween.start()
+	set_process(false)
+
+func _on_FadeTween_tween_completed(object, key):
+	if sceneLoaded:
+		game_manager.load_new_scene("overworld")
+	else:
+		set_process(true)
+		setupHand()
+	sceneLoaded = true

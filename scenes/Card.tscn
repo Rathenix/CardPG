@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Card.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 
-[node name="Card" type="PathFollow2D"]
+[node name="Card" type="PathFollow2D" index="0"]
 
 offset = 0.0
 h_offset = 0.0
@@ -11,12 +12,13 @@ rotate = true
 cubic_interp = true
 loop = false
 lookahead = 4.0
+script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 scale = Vector2( 0.4, 0.5 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Tween" type="Tween" parent="." index="1"]

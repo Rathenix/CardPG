@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://scenes/RpgTileSet.tres" type="TileSet" id=2]
@@ -9,8 +9,9 @@
 [ext_resource path="res://images/rpg-pack/props n decorations/generic-rpg-mini-lake.png" type="Texture" id=7]
 [ext_resource path="res://images/rpg-pack/props n decorations/generic-rpg-treasure-closed.png" type="Texture" id=8]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
 
-[node name="World" type="Node" index="0"]
+[node name="World" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -199,6 +200,34 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="23"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Fade" type="Sprite" parent="CanvasLayer" index="0"]
+
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 100, 100 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="FadeTween" type="Tween" parent="CanvasLayer/Fade" index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
 [connection signal="moved" from="Player" to="." method="_on_Player_moved"]
+
+[connection signal="tween_completed" from="CanvasLayer/Fade/FadeTween" to="." method="_on_FadeTween_tween_completed"]
 
 

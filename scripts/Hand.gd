@@ -50,6 +50,9 @@ func highlightCard(index):
 		pathTween.interpolate_property(c, "v_offset", c.v_offset, 0, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	pathTween.interpolate_property(cards[calcIndex], "v_offset", 0, -15, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	pathTween.start()
+	
+func playCard(index):
+	print(cards[index].value)
 
 func _on_Battle_hideHand():
 	unfocus()
@@ -62,3 +65,6 @@ func _on_Battle_highlightCard(index):
 
 func _on_Battle_drawCard():
 	drawCard()
+
+func _on_Battle_playCard(index):
+	playCard(index)

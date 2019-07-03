@@ -7,7 +7,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Hand.tscn" type="PackedScene" id=6]
 
-[node name="Battle" type="Node" index="0"]
+[node name="Battle" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -120,6 +120,7 @@ texture = ExtResource( 4 )
 
 [node name="cursor" type="Sprite" parent="." index="7"]
 
+visible = false
 position = Vector2( 120, 166 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 5 )
@@ -136,12 +137,42 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="10"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Fade" type="Sprite" parent="CanvasLayer" index="0"]
+
+visible = false
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 100, 100 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="FadeTween" type="Tween" parent="CanvasLayer/Fade" index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
 [connection signal="drawCard" from="." to="Hand" method="_on_Battle_drawCard"]
 
 [connection signal="hideHand" from="." to="Hand" method="_on_Battle_hideHand"]
 
 [connection signal="highlightCard" from="." to="Hand" method="_on_Battle_highlightCard"]
 
+[connection signal="playCard" from="." to="Hand" method="_on_Battle_playCard"]
+
 [connection signal="showHand" from="." to="Hand" method="_on_Battle_showHand"]
+
+[connection signal="tween_completed" from="CanvasLayer/Fade/FadeTween" to="." method="_on_FadeTween_tween_completed"]
 
 

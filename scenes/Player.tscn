@@ -43,6 +43,7 @@ speed = 100
 position = Vector2( 2, 0 )
 frames = SubResource( 1 )
 animation = "idle"
+_sections_unfolded = [ "Pause" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
