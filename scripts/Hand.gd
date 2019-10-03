@@ -2,29 +2,20 @@ extends Node2D
 
 var card = preload("res://scenes/Card.tscn")
 
+onready var game_manager = get_node("/root/GameManager")
 onready var path = $Path2D
 onready var pathTween = $Tween
 
 var cards = []
 var focusPosition = Vector2(96, 176)
 var unfocusPosition = Vector2(96, 216)
-var handSize = 7
 
 func _ready():
 	pass
-
-func fanCards():
-	for i in range(0, handSize):
-		var c = card.instance()
-		path.add_child(c)
-		cards.append(c)
-		var offset = (1.0 / (handSize + 1)) * (i + 1)
-		var cardTween = c.get_node("Tween")
-		cardTween.interpolate_property(c, "unit_offset", 0.5, offset, 0.75, Tween.TRANS_SINE, Tween.EASE_IN)
-		cardTween.start()
 		
-func drawCard():
+func drawCard(cardJson):
 	var newCard = card.instance()
+	newCard.load_data(cardJson)
 	path.add_child(newCard)
 	cards.append(newCard)
 	for i in range(0, cards.size()):
@@ -52,7 +43,9 @@ func highlightCard(index):
 	pathTween.start()
 	
 func playCard(index):
-	print(cards[index].value)
+	var calcIndex = index % cards.size()
+	var selectedCard = cards[calcIndex]
+	print(str(selectedCard.type) + ": " + str(selectedCard.value))
 
 func _on_Battle_hideHand():
 	unfocus()
@@ -63,8 +56,8 @@ func _on_Battle_showHand():
 func _on_Battle_highlightCard(index):
 	highlightCard(index)
 
-func _on_Battle_drawCard():
-	drawCard()
+func _on_Battle_drawCard(card):
+	drawCard(card)
 
 func _on_Battle_playCard(index):
 	playCard(index)

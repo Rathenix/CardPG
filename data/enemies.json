@@ -1,0 +1,9 @@
+{
+	"boss_bee": {
+		"image": "res://images/rpg-pack/mobs/boss_bee.png",
+		"health": 10,
+		"attack": 2,
+		"defense": 1
+	}
+
+}

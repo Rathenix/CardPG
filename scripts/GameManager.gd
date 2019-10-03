@@ -27,6 +27,7 @@ var scenes_on_top = []
 
 # sets the current scene to the title screen and loads in into the tree
 func _ready():
+	randomize()
 	current_primary_scene = overworld_scene.instance()
 	add_child(current_primary_scene)
 	
@@ -73,3 +74,17 @@ func _input(event):
 func set_player_location(node_name, offset):
 	var pos = current_primary_scene.get_node(node_name).get_position() + offset
 	current_primary_scene.player.set_position(pos)
+	
+func load_json_from_file(res_path_to_file):
+	var file = File.new()
+	file.open(res_path_to_file, file.READ)
+	var text_json = file.get_as_text()
+	var result_json = JSON.parse(text_json)
+	file.close()
+	if result_json.error == OK:
+    	return result_json.result
+	else:
+		print("Error: ", result_json.error)
+		print("Error Line: ", result_json.error_line)
+		print("Error String: ", result_json.error_string)
+		return {}

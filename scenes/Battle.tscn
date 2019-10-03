@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/Battle.gd" type="Script" id=1]
 [ext_resource path="res://images/terrible-forest.png" type="Texture" id=2]
 [ext_resource path="res://images/basic-menu-bar.png" type="Texture" id=3]
-[ext_resource path="res://images/rpg-pack/mobs/boss_bee.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Hand.tscn" type="PackedScene" id=6]
 
@@ -113,10 +113,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors" ]
 
-[node name="boss_bee" type="Sprite" parent="." index="6"]
+[node name="Enemy" parent="." index="6" instance=ExtResource( 4 )]
 
-position = Vector2( 96, 80 )
-texture = ExtResource( 4 )
+position = Vector2( 86, 64 )
 
 [node name="cursor" type="Sprite" parent="." index="7"]
 

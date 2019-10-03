@@ -1,0 +1,54 @@
+{
+	"cards": [
+		{
+			"image": "res://icon.png", 
+			"type": "attack", 
+			"value": 1
+		},
+		{
+			"image": "res://icon.png", 
+			"type": "attack", 
+			"value": 1
+		},
+				{
+			"image": "res://icon.png", 
+			"type": "attack", 
+			"value": 2
+		},
+				{
+			"image": "res://icon.png", 
+			"type": "attack", 
+			"value": 2
+		},
+				{
+			"image": "res://icon.png", 
+			"type": "attack", 
+			"value": 3
+		},
+				{
+			"image": "res://icon.png", 
+			"type": "defend", 
+			"value": 1
+		},
+				{
+			"image": "res://icon.png", 
+			"type": "defend", 
+			"value": 1
+		},
+				{
+			"image": "res://icon.png", 
+			"type": "defend", 
+			"value": 2
+		},
+				{
+			"image": "res://icon.png", 
+			"type": "defend", 
+			"value": 2
+		},
+				{
+			"image": "res://icon.png", 
+			"type": "defend", 
+			"value": 3
+		},
+	]
+}
