@@ -1,52 +1,52 @@
 {
 	"cards": [
 		{
-			"image": "res://icon.png", 
+			"image": "res://images/cards/attack1.png", 
 			"type": "attack", 
 			"value": 1
 		},
 		{
-			"image": "res://icon.png", 
+			"image": "res://images/cards/attack1.png", 
 			"type": "attack", 
 			"value": 1
 		},
 				{
-			"image": "res://icon.png", 
+			"image": "res://images/cards/attack2.png", 
 			"type": "attack", 
 			"value": 2
 		},
 				{
-			"image": "res://icon.png", 
+			"image": "res://images/cards/attack2.png", 
 			"type": "attack", 
 			"value": 2
 		},
 				{
-			"image": "res://icon.png", 
+			"image": "res://images/cards/attack3.png", 
 			"type": "attack", 
 			"value": 3
 		},
 				{
-			"image": "res://icon.png", 
+			"image": "res://images/cards/defend1.png", 
 			"type": "defend", 
 			"value": 1
 		},
 				{
-			"image": "res://icon.png", 
+			"image": "res://images/cards/defend1.png", 
 			"type": "defend", 
 			"value": 1
 		},
 				{
-			"image": "res://icon.png", 
+			"image": "res://images/cards/defend2.png", 
 			"type": "defend", 
 			"value": 2
 		},
 				{
-			"image": "res://icon.png", 
+			"image": "res://images/cards/defend2.png", 
 			"type": "defend", 
 			"value": 2
 		},
 				{
-			"image": "res://icon.png", 
+			"image": "res://images/cards/defend3.png", 
 			"type": "defend", 
 			"value": 3
 		},

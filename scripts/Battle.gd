@@ -133,3 +133,7 @@ func spawn_enemy():
 	var enemyJson = game_manager.load_json_from_file("res://data/enemies.json")
 	print(enemyJson)
 	enemy.load_data(enemyJson.boss_bee)
+
+
+func _on_Hand_dealDamage(damage):
+	enemy.show_floating_text(str(damage), Color(255, 0, 0, 1), "float")

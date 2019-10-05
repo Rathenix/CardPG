@@ -2,13 +2,15 @@ extends Node2D
 
 var card = preload("res://scenes/Card.tscn")
 
-onready var game_manager = get_node("/root/GameManager")
 onready var path = $Path2D
 onready var pathTween = $Tween
 
 var cards = []
 var focusPosition = Vector2(96, 176)
-var unfocusPosition = Vector2(96, 216)
+var unfocusPosition = Vector2(96, 221)
+var playedPosition = Vector2(0, -100)
+
+signal dealDamage
 
 func _ready():
 	pass
@@ -45,7 +47,11 @@ func highlightCard(index):
 func playCard(index):
 	var calcIndex = index % cards.size()
 	var selectedCard = cards[calcIndex]
-	print(str(selectedCard.type) + ": " + str(selectedCard.value))
+	pathTween.interpolate_property(selectedCard, "position", selectedCard.position, playedPosition, 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	pathTween.interpolate_property(selectedCard, "rotation_degrees", selectedCard.rotation_degrees, 0, 0.25, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	pathTween.start()
+	if selectedCard.type == "attack":
+		emit_signal("dealDamage", selectedCard.value)
 
 func _on_Battle_hideHand():
 	unfocus()

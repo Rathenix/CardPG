@@ -7,7 +7,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Hand.tscn" type="PackedScene" id=6]
 
-[node name="Battle" type="Node"]
+[node name="Battle" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -171,6 +171,8 @@ playback/speed = 1.0
 [connection signal="playCard" from="." to="Hand" method="_on_Battle_playCard"]
 
 [connection signal="showHand" from="." to="Hand" method="_on_Battle_showHand"]
+
+[connection signal="dealDamage" from="Hand" to="." method="_on_Hand_dealDamage"]
 
 [connection signal="tween_completed" from="CanvasLayer/Fade/FadeTween" to="." method="_on_FadeTween_tween_completed"]
 
