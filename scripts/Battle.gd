@@ -14,6 +14,8 @@ onready var handTween = $HandTween
 onready var cursor = $cursor
 onready var fade = $CanvasLayer/Fade
 
+var sceneIsBusy = false
+var playerHasControl = false
 var handShowing = false
 var selectedCardIndex = 0
 var startingHandSize = 5
@@ -47,7 +49,9 @@ func setupHand():
 	handShowing = false
 
 func _process(delta):
-	get_input()
+	playerHasControl = !sceneIsBusy
+	if playerHasControl:
+		get_input()
 	
 func get_input():
 	var handPos = hand.position
@@ -134,6 +138,8 @@ func spawn_enemy():
 	print(enemyJson)
 	enemy.load_data(enemyJson.boss_bee)
 
-
 func _on_Hand_dealDamage(damage):
 	enemy.show_floating_text(str(damage), Color(255, 0, 0, 1), "float")
+
+func _on_Hand_sceneIsBusy(isSceneBusy):
+	sceneIsBusy = isSceneBusy

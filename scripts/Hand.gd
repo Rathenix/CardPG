@@ -10,6 +10,7 @@ var focusPosition = Vector2(96, 176)
 var unfocusPosition = Vector2(96, 221)
 var playedPosition = Vector2(0, -100)
 
+signal sceneIsBusy
 signal dealDamage
 
 func _ready():
@@ -22,7 +23,8 @@ func drawCard(cardJson):
 	cards.append(newCard)
 	for i in range(0, cards.size()):
 		var offset = (1.0 / (cards.size() + 1)) * (i + 1)
-		var cardTween = newCard.get_node("Tween")
+		var cardTween = cards[i].get_node("Tween")
+		cardTween.connect("tween_completed", self, "_on_cardTween_tween_completed")
 		cardTween.interpolate_property(cards[i], "unit_offset", cards[i].unit_offset, offset, 0.75, Tween.TRANS_SINE, Tween.EASE_IN)
 		cardTween.start()
 	highlightCard(cards.size() - 1)
@@ -67,3 +69,12 @@ func _on_Battle_drawCard(card):
 
 func _on_Battle_playCard(index):
 	playCard(index)
+
+func _on_Tween_tween_started(object, key):
+	emit_signal("sceneIsBusy", true)
+
+func _on_Tween_tween_completed(object, key):
+	emit_signal("sceneIsBusy", false)
+	
+func _on_cardTween_tween_completed():
+	print("cardTween completed")
