@@ -1,0 +1,487 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://images/mytiles/tiles_00.png" type="Texture" id=1]
+[ext_resource path="res://images/mytiles/tiles_01.png" type="Texture" id=2]
+[ext_resource path="res://images/mytiles/tiles_02.png" type="Texture" id=3]
+[ext_resource path="res://images/mytiles/tiles_03.png" type="Texture" id=4]
+[ext_resource path="res://images/mytiles/tiles_04.png" type="Texture" id=5]
+[ext_resource path="res://images/mytiles/tiles_05.png" type="Texture" id=6]
+[ext_resource path="res://images/mytiles/tiles_06.png" type="Texture" id=7]
+[ext_resource path="res://images/mytiles/tiles_07.png" type="Texture" id=8]
+[ext_resource path="res://images/mytiles/tiles_08.png" type="Texture" id=9]
+[ext_resource path="res://images/mytiles/tiles_09.png" type="Texture" id=10]
+[ext_resource path="res://images/mytiles/tiles_10.png" type="Texture" id=11]
+[ext_resource path="res://images/mytiles/tiles_11.png" type="Texture" id=12]
+[ext_resource path="res://images/mytiles/tiles_12.png" type="Texture" id=13]
+[ext_resource path="res://images/mytiles/tiles_13.png" type="Texture" id=14]
+[ext_resource path="res://images/mytiles/tiles_14.png" type="Texture" id=15]
+[ext_resource path="res://images/mytiles/tiles_15.png" type="Texture" id=16]
+[ext_resource path="res://images/mytiles/tiles_16.png" type="Texture" id=17]
+[ext_resource path="res://images/mytiles/tiles_17.png" type="Texture" id=18]
+[ext_resource path="res://images/mytiles/tiles_18.png" type="Texture" id=19]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[node name="MyTileSet" type="Node"]
+
+[node name="dirt" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="dirt" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_center" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 32, 0 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="grass_center" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_center/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_bottom" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 64, 0 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="grass_bottom" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_bottom/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_bottomright" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 96, 0 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="grass_bottomright" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_bottomright/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_right" type="Sprite" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 128, 0 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="grass_right" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_right/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_topright" type="Sprite" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 160, 0 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="grass_topright" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_topright/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_top" type="Sprite" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 192, 0 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="grass_top" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_top/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_topleft" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 0, 32 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="grass_topleft" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_topleft/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_left" type="Sprite" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 32, 32 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="grass_left" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_left/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="grass_bottomleft" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( 64, 32 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="grass_bottomleft" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="grass_bottomleft/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="water_center" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 96, 32 )
+texture = ExtResource( 11 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="water_center" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_center/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="water_bottom" type="Sprite" parent="." index="11"]
+
+editor/display_folded = true
+position = Vector2( 128, 32 )
+texture = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="water_bottom" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_bottom/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="water_bottomright" type="Sprite" parent="." index="12"]
+
+editor/display_folded = true
+position = Vector2( 160, 32 )
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="water_bottomright" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_bottomright/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="water_right" type="Sprite" parent="." index="13"]
+
+editor/display_folded = true
+position = Vector2( 192, 32 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="water_right" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_right/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="water_topright" type="Sprite" parent="." index="14"]
+
+editor/display_folded = true
+position = Vector2( 0, 64 )
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="water_topright" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_topright/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="water_top" type="Sprite" parent="." index="15"]
+
+editor/display_folded = true
+position = Vector2( 32, 64 )
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="water_top" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_top/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="water_topleft" type="Sprite" parent="." index="16"]
+
+editor/display_folded = true
+position = Vector2( 64, 64 )
+texture = ExtResource( 17 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="water_topleft" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_topleft/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="water_left" type="Sprite" parent="." index="17"]
+
+editor/display_folded = true
+position = Vector2( 96, 64 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="water_left" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_left/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="water_bottomleft" type="Sprite" parent="." index="18"]
+
+editor/display_folded = true
+position = Vector2( 128, 64 )
+texture = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="water_bottomleft" index="0"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="water_bottomleft/Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+

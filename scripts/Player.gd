@@ -13,11 +13,11 @@ func get_input():
 	animation = "idle"
 	if Input.is_action_pressed('right'):
 		velocity.x += 1
-		$Sprite.flip_h = false
+		$Sprite.flip_h = true
 		animation = "move"
 	if Input.is_action_pressed('left'):
 		velocity.x -= 1
-		$Sprite.flip_h = true
+		$Sprite.flip_h = false
 		animation = "move"
 	if Input.is_action_pressed('down'):
 		velocity.y += 1
@@ -27,7 +27,8 @@ func get_input():
 		animation = "move"
 	if animation == "move":
 		emit_signal("moved")
-	$Sprite.play(animation)
+	#$Sprite.play(animation)
+	$Sprite.play("idle")
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
