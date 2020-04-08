@@ -16,7 +16,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 5, 12 )
+extents = Vector2( 5, 7 )
 
 [node name="Player" type="KinematicBody2D"]
 
@@ -32,12 +32,13 @@ speed = 100
 position = Vector2( 2, 0 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 _sections_unfolded = [ "Pause" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 2, 1 )
+position = Vector2( 2, 6 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
 

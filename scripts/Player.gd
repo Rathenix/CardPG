@@ -7,6 +7,7 @@ export (int) var speed = 100
 var velocity = Vector2()
 var animation = ""
 signal moved
+signal collided
 
 func get_input():
 	velocity = Vector2()
@@ -34,3 +35,8 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision:
+			emit_signal('collided', collision)
+

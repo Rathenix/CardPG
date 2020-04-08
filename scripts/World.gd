@@ -3,6 +3,7 @@ extends Node
 onready var game_manager = get_node("/root/GameManager")
 onready var camera = $Camera2D
 onready var player = $Player
+onready var tileMap = $TileMap
 onready var fade = $CanvasLayer/Fade
 
 const TILE_SIZE = 16 #px
@@ -36,7 +37,7 @@ func update_camera():
 
 func _on_Player_moved():
 	var rand = floor(rand_range(0, 100))
-	if rand == 5:
+	if rand == 1000:
 		player.animation = "idle"
 		player.set_physics_process(false)
 		var fade_tween = fade.get_node("FadeTween")
@@ -49,3 +50,10 @@ func _on_FadeTween_tween_completed(object, key):
 	else:
 		player.set_physics_process(true)
 	sceneLoaded = true
+
+func _on_Player_collided(collision):
+	if collision.collider is TileMap:
+		var tile_pos = collision.collider.world_to_map(player.position)
+		tile_pos -= collision.normal  # Colliding tile
+		var tile = collision.collider.get_cellv(tile_pos)
+
