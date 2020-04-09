@@ -5,12 +5,17 @@ onready var camera = $Camera2D
 onready var player = $Player
 onready var tileMap = $TileMap
 onready var fade = $CanvasLayer/Fade
+onready var textboxBackground = $CanvasLayer/BasicTextBox
+onready var textLabel = $CanvasLayer/BasicTextBox/RichTextLabel
 
 const TILE_SIZE = 16 #px
 const SCREEN_WIDTH = 12 #tiles
 const SCREEN_HEIGHT = 12 #tiles
 
 var sceneLoaded = false
+var interactionText = [""]
+
+signal finished_interaction
 
 func _ready():
 	fade.visible = true
@@ -57,3 +62,30 @@ func _on_Player_collided(collision):
 		tile_pos -= collision.normal  # Colliding tile
 		var tile = collision.collider.get_cellv(tile_pos)
 
+
+
+func _on_MainSignArea_body_entered(body):
+	if body == player:
+		player.interactable = true
+		interactionText = ["[color=#000000]This is a sign.[/color]",
+									"[color=#000000]They can have multiple lines of text.[/color]",
+									"[color=#000000]You can even do \n[/color][color=#FF0000]R[/color][color=#FFDA00]A[/color][color=#48FF00]I[/color][color=#00FF91]N[/color][color=#0091FF]B[/color][color=#4800FF]O[/color][color=#FF00DA]W [/color][color=#000000]text.[/color]"]
+
+func _on_MainSignArea_body_exited(body):
+	if body == player:
+		player.interactable = false
+		interactionText = [""]
+
+func _on_Player_interaction():
+	textboxBackground.visible = true
+	if interactionText.size() > 0:
+		textLabel.bbcode_text = interactionText[0]
+
+func _on_Player_advance_text():
+	interactionText.pop_front()
+	if interactionText.size() > 0:
+		textLabel.bbcode_text = interactionText[0]
+	else:
+		textboxBackground.visible = false
+		emit_signal("finished_interaction")
+		
