@@ -89,6 +89,8 @@ func highlightCard(index):
 	var calcIndex = index % currentHand.size()
 	for c in currentHand:
 		activeTween.interpolate_property(c, "v_offset", c.v_offset, 0, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		c.z_index = 0
+	currentHand[calcIndex].z_index = 1
 	activeTween.interpolate_property(currentHand[calcIndex], "v_offset", 0, -15, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	activeTween.start()
 

@@ -6,7 +6,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://images/basic-menu-bar.png" type="Texture" id=5]
 
-[node name="Battle" type="Node" index="0"]
+[node name="Battle" type="Node"]
 
 script = ExtResource( 1 )
 
