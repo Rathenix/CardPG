@@ -3,7 +3,7 @@ extends Node
 onready var game_manager = get_node("/root/GameManager")
 onready var camera = $Camera2D
 onready var player = $Player
-onready var tileMap = $TileMap
+onready var groundTileMap = $GroundTileMap
 onready var fade = $CanvasLayer/Fade
 onready var textboxBackground = $CanvasLayer/BasicTextBox
 onready var textLabel = $CanvasLayer/BasicTextBox/RichTextLabel
@@ -14,6 +14,7 @@ const SCREEN_HEIGHT = 12 #tiles
 
 var sceneLoaded = false
 var interactionText = [""]
+var encounterRate = 0
 
 signal finished_interaction
 
@@ -41,13 +42,14 @@ func update_camera():
 	camera_tween.start()
 
 func _on_Player_moved():
-	var rand = floor(rand_range(0, 100))
-	if rand == 1000:
-		player.animation = "idle"
-		player.set_physics_process(false)
-		var fade_tween = fade.get_node("FadeTween")
-		fade_tween.interpolate_property(fade, "self_modulate", Color(0, 0, 0, 0), Color(0, 0, 0, 1), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
-		fade_tween.start()
+	if encounterRate != 0:
+		var rand = floor(rand_range(0, encounterRate))
+		if rand == 0:
+			player.animation = "idle"
+			player.set_physics_process(false)
+			var fade_tween = fade.get_node("FadeTween")
+			fade_tween.interpolate_property(fade, "self_modulate", Color(0, 0, 0, 0), Color(0, 0, 0, 1), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			fade_tween.start()
 
 func _on_FadeTween_tween_completed(object, key):
 	if sceneLoaded:
@@ -61,8 +63,6 @@ func _on_Player_collided(collision):
 		var tile_pos = collision.collider.world_to_map(player.position)
 		tile_pos -= collision.normal  # Colliding tile
 		var tile = collision.collider.get_cellv(tile_pos)
-
-
 
 func _on_MainSignArea_body_entered(body):
 	if body == player:
@@ -88,4 +88,11 @@ func _on_Player_advance_text():
 	else:
 		textboxBackground.visible = false
 		emit_signal("finished_interaction")
-		
+
+func _on_StartingZone_body_entered(body):
+	if body == player:
+		encounterRate = 0
+
+func _on_StartingZone_body_exited(body):
+	if body == player:
+		encounterRate = 100

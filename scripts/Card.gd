@@ -7,10 +7,9 @@ func _ready():
 	pass
 	
 func load_data(cardJson):
-	var img = Image.new()
-	img.load(cardJson.image)
-	var tex = ImageTexture.new()
-	tex.create_from_image(img)
-	$Sprite.set_texture(tex)
+	setTexture(cardJson.image)
 	type = cardJson.type
 	value = cardJson.value
+
+func setTexture(tex):
+	$Sprite.texture = load(tex)

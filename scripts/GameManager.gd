@@ -16,7 +16,11 @@ var scenes = {
 #player stats
 var player_data = { 
 	"max_health": 0,
-	"current_health": 0
+	"current_health": 0,
+	"attack": 0,
+	"defense": 0,
+	"location": Vector2(0, 0),
+	"experience": 0
  }
 
 # the current scene that the Player(person) is on

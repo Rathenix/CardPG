@@ -1,0 +1,9 @@
+[gd_resource type="Curve2D" format=2]
+
+[resource]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 38.8497, -39.0643, -64, 0, -36.9179, -38.8497, 0, 0, 64, 0 )
+}
+
