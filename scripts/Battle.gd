@@ -114,7 +114,7 @@ func Flee():
 
 func _on_FadeTween_tween_completed(object, key):
 	if sceneLoaded:
-		game_manager.load_new_scene("overworld")
+		game_manager.load_new_scene(game_manager.player_data.world)
 	sceneLoaded = true
 
 func _on_StaticTween_tween_completed(object, key):

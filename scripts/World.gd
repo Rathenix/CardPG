@@ -21,14 +21,22 @@ signal finished_interaction
 func _ready():
 	fade.visible = true
 	player.set_physics_process(false)
+	set_player_pos()
 	var fade_tween = fade.get_node("FadeTween")
 	fade_tween.interpolate_property(fade, "self_modulate", Color(0, 0, 0, 1), Color(0, 0, 0, 0), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	fade_tween.start()
 
 func _process(delta):
 	update_camera()
+
+func set_player_pos(): 
+	var pos = Vector2()
+	pos.x = game_manager.player_data.position_x
+	pos.y = game_manager.player_data.position_y
+	player.set_position(pos)
+	update_camera(false)
 	
-func update_camera():
+func update_camera(animate = true):
 	var player_pos = player.get_position()
 	var camera_grid_pos = Vector2()
 	var camera_position = Vector2()
@@ -37,11 +45,16 @@ func update_camera():
 	camera_position.x = camera_grid_pos.x * TILE_SIZE * SCREEN_WIDTH
 	camera_position.y = camera_grid_pos.y * TILE_SIZE * SCREEN_HEIGHT
 	
-	var camera_tween = camera.get_node("CameraTween")
-	camera_tween.interpolate_property(camera, "position", camera.position, camera_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	camera_tween.start()
+	if animate:
+		var camera_tween = camera.get_node("CameraTween")
+		camera_tween.interpolate_property(camera, "position", camera.position, camera_position, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		camera_tween.start()
+	else:
+		camera.position = camera_position
 
 func _on_Player_moved():
+	game_manager.player_data.position_x = player.position.x
+	game_manager.player_data.position_y = player.position.y
 	if encounterRate != 0:
 		var rand = floor(rand_range(0, encounterRate))
 		if rand == 0:

@@ -19,7 +19,9 @@ var player_data = {
 	"current_health": 0,
 	"attack": 0,
 	"defense": 0,
-	"location": Vector2(0, 0),
+	"world": "overworld",
+	"position_x": 96,
+	"position_y": 96,
 	"experience": 0
  }
 
@@ -32,6 +34,7 @@ var scenes_on_top = []
 # sets the current scene to the title screen and loads in into the tree
 func _ready():
 	randomize()
+	load_player_data_from_file("res://data/save_0.json")
 	current_primary_scene = overworld_scene.instance()
 	add_child(current_primary_scene)
 	
@@ -73,11 +76,11 @@ func close_all_scenes_on_top():
 		
 func _input(event):
 	if event.is_action_pressed("menu"):
-		pass
+		save_player_data_to_file("res://data/save_0.json")
 
 func set_player_location(node_name, offset):
 	var pos = current_primary_scene.get_node(node_name).get_position() + offset
-	current_primary_scene.player.set_position(pos)
+	current_primary_scene.get_node(node_name).set_position(pos)
 	
 func load_json_from_file(res_path_to_file):
 	var file = File.new()
@@ -92,3 +95,21 @@ func load_json_from_file(res_path_to_file):
 		print("Error Line: ", result_json.error_line)
 		print("Error String: ", result_json.error_string)
 		return {}
+
+func save_player_data_to_file(filename):
+	var file = File.new()
+	file.open(filename, file.WRITE)
+	file.store_string(JSON.print(player_data))
+	file.close()
+
+func load_player_data_from_file(filename):
+	var player_json = load_json_from_file(filename)
+	if player_json != {}:
+		player_data.max_health = int(player_json.max_health)
+		player_data.current_health = int(player_json.current_health)
+		player_data.attack = int(player_json.attack)
+		player_data.defense = int(player_json.defense)
+		player_data.world = str(player_json.world)
+		player_data.position_x = int(player_json.position_x)
+		player_data.position_y = int(player_json.position_y)
+		player_data.experience = int(player_json.experience)
