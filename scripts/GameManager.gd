@@ -22,7 +22,8 @@ var player_data = {
 	"world": "overworld",
 	"position_x": 96,
 	"position_y": 96,
-	"experience": 0
+	"experience": 0,
+	"equipment": []
  }
 
 # the current scene that the Player(person) is on
@@ -113,3 +114,4 @@ func load_player_data_from_file(filename):
 		player_data.position_x = int(player_json.position_x)
 		player_data.position_y = int(player_json.position_y)
 		player_data.experience = int(player_json.experience)
+		player_data.equipment = player_json.equipment

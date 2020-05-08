@@ -86,13 +86,14 @@ func Draw():
 		highlightCard(selectedCardIndex)
 		
 func highlightCard(index):
-	var calcIndex = index % currentHand.size()
+	selectedCardIndex = index % currentHand.size()
 	for c in currentHand:
 		activeTween.interpolate_property(c, "v_offset", c.v_offset, 0, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		c.z_index = 0
-	currentHand[calcIndex].z_index = 1
-	activeTween.interpolate_property(currentHand[calcIndex], "v_offset", 0, -15, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	currentHand[selectedCardIndex].z_index = 1
+	activeTween.interpolate_property(currentHand[selectedCardIndex], "v_offset", 0, -15, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	activeTween.start()
+	print(selectedCardIndex)
 
 func playCard(card):
 	if card.type == "flee":
@@ -101,8 +102,8 @@ func playCard(card):
 		cardsToDraw += 3
 	elif card.type == "attack":
 		print("attack +" + str(card.value))
-	elif card.type == "defend":
-		print("defend +" + str(card.value))
+	elif card.type == "defense":
+		print("defense +" + str(card.value))
 	else:
 		print("unknown card type: " + str(card.type))
 
@@ -121,10 +122,22 @@ func _on_StaticTween_tween_completed(object, key):
 	nodesStaticAnimating -= 1
 
 func load_player_deck():
-	var deckJson = game_manager.load_json_from_file("res://data/player_cards.json")
-	currentDeck = deckJson.cards
+	var cards = []
+	for item in game_manager.player_data.equipment:
+		for card in item.cards:
+			cards.append(card)
+	currentDeck = shuffle(cards)
 	
 func spawn_enemy():
 	var enemyJson = game_manager.load_json_from_file("res://data/enemies.json")
 	print(enemyJson)
 	enemy.load_data(enemyJson.boss_bee)
+	
+func shuffle(deck):
+    var shuffled = [] 
+    var index = range(deck.size())
+    for i in range(deck.size()):
+        var x = randi()%index.size()
+        shuffled.append(deck[index[x]])
+        index.remove(x)
+    return shuffled
