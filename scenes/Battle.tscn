@@ -6,7 +6,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://images/basic-menu-bar.png" type="Texture" id=5]
 
-[node name="Battle" type="Node"]
+[node name="Battle" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -74,6 +74,22 @@ playback/speed = 1.0
 visible = false
 position = Vector2( 96, 160 )
 texture = ExtResource( 5 )
+
+[node name="Deck" type="Path2D" parent="." index="6"]
+
+visible = false
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+position = Vector2( 0, 200 )
+curve = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Discard" type="Path2D" parent="." index="7"]
+
+visible = false
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+position = Vector2( 200, 200 )
+curve = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="tween_completed" from="StaticTween" to="." method="_on_StaticTween_tween_completed"]
 
