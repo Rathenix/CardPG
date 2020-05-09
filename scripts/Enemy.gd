@@ -3,6 +3,7 @@ extends Sprite
 onready var floatingText = $CanvasLayer/Label
 onready var floatingTextTween = $CanvasLayer/Label/Tween
 
+var display_name = "enemy"
 var maxHealth = 0
 var currentHealth = 0
 var attack = 0
@@ -18,6 +19,7 @@ func load_data(enemyJson):
 	var tex = ImageTexture.new()
 	tex.create_from_image(img)
 	set_texture(tex)
+	display_name = enemyJson.name
 	maxHealth = enemyJson.health
 	currentHealth = maxHealth
 	attack = enemyJson.attack

@@ -26,6 +26,7 @@ position = Vector2( 96, 96 )
 [node name="Enemy" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 86, 64 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="ActiveTween" type="Tween" parent="." index="2"]
 
