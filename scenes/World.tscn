@@ -150,7 +150,6 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -177,7 +176,6 @@ playback/speed = 1.0
 
 [node name="BasicTextBox" type="Sprite" parent="CanvasLayer" index="1"]
 
-editor/display_folded = true
 visible = false
 self_modulate = Color( 1, 1, 1, 0.686275 )
 position = Vector2( 96, 152 )

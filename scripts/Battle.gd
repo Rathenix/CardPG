@@ -16,7 +16,8 @@ onready var discard_area = $Discard
 onready var activeTween = $ActiveTween # animate while game plays
 onready var staticTween = $StaticTween # pause gameplay while animating
 onready var fade = $CanvasLayer/Fade
-onready var menubar = $CanvasLayer/MenuBar
+onready var text_background = $CanvasLayer/MenuBar
+onready var battle_text = $CanvasLayer/MenuBar/RichTextLabel
 
 var card = preload("res://scenes/Card.tscn")
 var terribleForestTexture = preload("res://images/terrible-forest.png")
@@ -28,6 +29,11 @@ var selectedCardIndex = 0
 var startingHandSize = 5
 var cardsToDraw = 0
 var player_initiative = true
+var texts_to_show = []
+var fleeing = false
+var playing = false
+var card_played
+var first_draw = false
 
 var sceneLoaded = false
 
@@ -50,26 +56,51 @@ func _ready():
 
 func _process(delta):
 	if nodesStaticAnimating == 0:
-		get_input()
-		if cardsToDraw > 0:
-			Draw()
-	
-func get_input():
-	if Input.is_action_just_pressed('right'):
-		selectedCardIndex += 1
-		highlightCard(selectedCardIndex)
-	if Input.is_action_just_pressed('left'):
-		if selectedCardIndex > 0:
-			selectedCardIndex -= 1
+		text_background.visible = texts_to_show.size() > 0
+		if texts_to_show.size() > 0:
+			battle_text.bbcode_text = texts_to_show[0]
 		else:
-			selectedCardIndex = hand.get_child_count() - 1
-		highlightCard(selectedCardIndex)
-	if Input.is_action_just_pressed('select'):
-		playCard(hand.get_child(selectedCardIndex))
-	if Input.is_action_just_pressed('back'):
-		pass
+			if cardsToDraw > 0:
+				draw()
+			elif fleeing:
+				flee()
+			elif playing:
+				play_battle_card(card_played)
+		get_input()
 
-func Draw():
+func get_input():
+	if texts_to_show.size() == 0:
+		if Input.is_action_just_pressed('right'):
+			selectedCardIndex += 1
+			highlightCard(selectedCardIndex)
+		if Input.is_action_just_pressed('left'):
+			if selectedCardIndex > 0:
+				selectedCardIndex -= 1
+			else:
+				selectedCardIndex = hand.get_child_count() - 1
+			highlightCard(selectedCardIndex)
+		if Input.is_action_just_pressed('select'):
+			choose_card(hand.get_child(selectedCardIndex))
+		if Input.is_action_just_pressed('back'):
+			pass
+	else:
+		if Input.is_action_just_pressed('select'):
+			texts_to_show.pop_front()
+
+func choose_card(chosen_card):
+	if chosen_card.type == "flee":
+		fleeing = true
+		texts_to_show.append("[color=#000000]Let's get out of here![/color]")
+	elif chosen_card.type == "draw":
+		texts_to_show.append("[color=#000000]You draw 3 cards...[/color]")
+		cardsToDraw += 3
+	else:
+		texts_to_show.append("[color=#000000]Level " + str(chosen_card.value) + " " + str(chosen_card.type) + " spell![/color]")
+		playing = true
+		card_played = chosen_card
+
+func draw():
+	hand.visible = true
 	if cardsToDraw > 0:
 		if deck_area.get_child_count() > 0:
 			cardsToDraw -= 1
@@ -90,12 +121,25 @@ func Draw():
 			if deck_area.get_child_count() == 0:
 				print("nothing to draw")
 				cardsToDraw = 0
+	if cardsToDraw == 0:
+		if first_draw:
+			first_draw = false
+			if player_initiative:
+				texts_to_show.append("[color=#000000]You have a chance to attack.[/color]")
+			else:
+				texts_to_show.append("[color=#000000]It got the drop on you! Watch out![/color]")
+		else:
+			var enemy_attack = enemy.attack
+			var enemy_defense = enemy.defense
+			var player_attack = game_manager.player_data.attack
+			var player_defense = game_manager.player_data.defense
+			fight(player_attack, player_defense, enemy_attack, enemy_defense)
+		
 
 func adjust_hand_spacing():
 	for i in range(0, hand.get_child_count()):
 		var offset = (1.0 / (hand.get_child_count() + 1)) * (i + 1)
 		staticTween.interpolate_property(hand.get_child(i), "unit_offset", hand.get_child(i).unit_offset, offset, 0.5, Tween.TRANS_SINE, Tween.EASE_IN)
-		nodesStaticAnimating += 1
 		staticTween.start()
 		
 func highlightCard(index):
@@ -109,24 +153,18 @@ func highlightCard(index):
 	activeTween.interpolate_property(hand.get_child(selectedCardIndex), "v_offset", 0, -15, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	activeTween.start()
 
-func playCard(card):
+func play_battle_card(card):
 	var enemy_attack = enemy.attack
 	var enemy_defense = enemy.defense
 	var player_attack = game_manager.player_data.attack
 	var player_defense = game_manager.player_data.defense
-	if card.type == "flee":
-		Flee()
-	elif card.type == "draw":
-		cardsToDraw += 3
-	elif card.type == "attack":
-		print("attack +" + str(card.value))
+	if card.type == "attack":
 		player_attack += card.value
 		hand.remove_child(card)
 		discard_area.add_child(card)
 		adjust_hand_spacing()
 		highlightCard(selectedCardIndex)
 	elif card.type == "defense":
-		print("defense +" + str(card.value))
 		player_defense += card.value
 		adjust_hand_spacing()
 		hand.remove_child(card)
@@ -140,43 +178,58 @@ func playCard(card):
 func fight(player_attack, player_defense, enemy_attack, enemy_defense):
 	var player_dice = Vector2(randi() % 6 + 1, randi() % 6 + 1)
 	var player_roll = int(player_dice.x) + int(player_dice.y)
-	print("player dice: " + str(player_dice))
-	print("player roll: " + str(player_roll))
+	texts_to_show.append("[color=#000000]Player rolls: " + str(player_dice) + "[/color]")
 	
 	var enemy_dice = Vector2(randi() % 6 + 1, randi() % 6 + 1)
 	var enemy_roll = int(enemy_dice.x) + int(enemy_dice.y)
-	print("enemy dice: " + str(enemy_dice))
-	print("enemy roll: " + str(enemy_roll))
+	texts_to_show.append("[color=#000000]The enemy rolls: " + str(enemy_dice) + "[/color]")
 	
 	var damage = 0
 	if player_initiative:
 		player_attack += player_roll
-		print("player attack: " + str(player_attack))
 		enemy_defense += enemy_roll
-		print("enemy defense: " + str(enemy_defense))
 		damage = max(0, player_attack - enemy_defense)
-		game_manager.player_data.current_health -= damage
+		enemy.currentHealth -= damage
 		enemy.show_floating_text(str(damage), Color(255, 0, 0, 1), "float")
+		texts_to_show.append("[color=#000000]You whack it for " + str(damage) + " damage.[/color]")
+		if enemy.currentHealth > 0:
+			texts_to_show.append("[color=#000000]Watch out! It's about to strike![/color]")
 	else:
 		enemy_attack += enemy_roll
-		print("enemy attack: " + str(enemy_attack))
 		player_defense += player_roll
-		print("player defense: " + str(player_defense))
 		damage = max(0, enemy_attack - player_defense)
-		enemy.currentHealth -= damage
-	print("damage: " + str(damage))
+		game_manager.player_data.current_health -= damage
+		texts_to_show.append("[color=#000000]It mauls you for " + str(damage) + " damage.[/color]")
+		if game_manager.player_data.current_health > 0:
+			texts_to_show.append("[color=#000000]It's your turn to attack.[/color]")
+	if game_manager.player_data.current_health <= 0:
+		texts_to_show.append("[color=#000000]You can't go on like this![/color]")
+		fleeing = true
+	elif enemy.currentHealth <= 0:
+		texts_to_show.append("[color=#000000]Piece of cake. You beat it.[/color]")
+		texts_to_show.append("[color=#000000]Gained 50 EXP![/color]")
+		game_manager.player_data.experience += 50
+		texts_to_show.append("[color=#000000]You now have " + str(game_manager.player_data.experience) + " EXP.[/color]")
+		fleeing = true
 	player_initiative = !player_initiative
+	playing = false
+	print("playerhp: " + str(game_manager.player_data.current_health))
+	print("enemyhp: " + str(enemy.currentHealth))
 
-func Flee():
+func flee():
 	var fade_tween = fade.get_node("FadeTween")
 	fade_tween.interpolate_property(fade, "self_modulate", Color(0, 0, 0, 0), Color(0, 0, 0, 1), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	fade_tween.start()
 	set_process(false)
+	fleeing = false
 
 func _on_FadeTween_tween_completed(object, key):
 	if sceneLoaded:
 		game_manager.load_new_scene(game_manager.player_data.world)
 	sceneLoaded = true
+
+func _on_StaticTween_tween_started(object, key):
+	nodesStaticAnimating += 1
 
 func _on_StaticTween_tween_completed(object, key):
 	nodesStaticAnimating -= 1
@@ -191,12 +244,13 @@ func load_player_deck():
 		var newCard = card.instance()
 		newCard.load_data(c)
 		deck_area.add_child(newCard)
+	first_draw = true
 	cardsToDraw = startingHandSize
 	
 func spawn_enemy():
 	var enemyJson = game_manager.load_json_from_file("res://data/enemies.json")
-	print(enemyJson)
 	enemy.load_data(enemyJson.boss_bee)
+	texts_to_show.append("[color=#000000]It's a " + str(enemy) + "![/color]")
 	
 func shuffle(deck):
     var shuffled = [] 

@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Battle.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/HandCurve.tres" type="Curve2D" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://images/basic-menu-bar.png" type="Texture" id=5]
+[ext_resource path="res://fonts/manaspc.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 10
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="Battle" type="Node" index="0"]
 
@@ -38,6 +47,7 @@ playback/speed = 1.0
 
 [node name="Hand" type="Path2D" parent="." index="4"]
 
+visible = false
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 position = Vector2( 96, 175 )
 curve = ExtResource( 3 )
@@ -72,8 +82,40 @@ playback/speed = 1.0
 [node name="MenuBar" type="Sprite" parent="CanvasLayer" index="1"]
 
 visible = false
+self_modulate = Color( 1, 1, 1, 0.686275 )
 position = Vector2( 96, 160 )
 texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MenuBar" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -80.0
+margin_top = -22.0
+margin_right = 80.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[color=#000000]This is example text[/color]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "This is example text"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "BBCode", "custom_fonts" ]
 
 [node name="Deck" type="Path2D" parent="." index="6"]
 
@@ -92,6 +134,8 @@ curve = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="tween_completed" from="StaticTween" to="." method="_on_StaticTween_tween_completed"]
+
+[connection signal="tween_started" from="StaticTween" to="." method="_on_StaticTween_tween_started"]
 
 [connection signal="tween_completed" from="CanvasLayer/Fade/FadeTween" to="." method="_on_FadeTween_tween_completed"]
 
