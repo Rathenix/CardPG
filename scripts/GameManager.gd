@@ -1,7 +1,11 @@
 extends Node
 
+const SAVE_0 = "res://data/saves/save_0.json"
+const SAVE_1 = "res://data/saves/save_1.json"
+const SAVE_2 = "res://data/saves/save_2.json"
+
 # the game scenes that can be accessed by the game_manager
-#var title_scene = preload("res://scenes/title_screen.tscn")
+var title_scene = preload("res://scenes/TitleScreen.tscn")
 var overworld_scene = preload("res://scenes/World.tscn")
 var battle_scene = preload("res://scenes/Battle.tscn")
 #var scene_selector_scene = preload("res://scenes/scene_selector.tscn")
@@ -9,12 +13,14 @@ var battle_scene = preload("res://scenes/Battle.tscn")
 
 # a dictionary to look up the scene objects by a name
 var scenes = {
+	"title_screen": title_scene,
 	"overworld": overworld_scene,
 	"battle": battle_scene
 }
 
 #player stats
 var player_data = { 
+	"save": "unsaved",
 	"max_health": 10,
 	"current_health": 10,
 	"attack": 0,
@@ -35,8 +41,7 @@ var scenes_on_top = []
 # sets the current scene to the title screen and loads in into the tree
 func _ready():
 	randomize()
-	load_player_data_from_file("res://data/save_0.json")
-	current_primary_scene = overworld_scene.instance()
+	current_primary_scene = title_scene.instance()
 	add_child(current_primary_scene)
 	
 # removes the current scene from the tree and then loads a new current scene into the tree by name
@@ -77,7 +82,7 @@ func close_all_scenes_on_top():
 		
 func _input(event):
 	if event.is_action_pressed("menu"):
-		save_player_data_to_file("res://data/save_0.json")
+		save_player_data_to_file(player_data.save)
 
 func set_player_location(node_name, offset):
 	var pos = current_primary_scene.get_node(node_name).get_position() + offset

@@ -157,6 +157,7 @@ func play_battle_card(card):
 		hand.remove_child(card)
 		discard_area.add_child(card)
 		adjust_hand_spacing()
+		selectedCardIndex -= 1
 		highlight_card(selectedCardIndex)
 	elif card.type == "defense":
 		player_defense += card.value
@@ -164,6 +165,7 @@ func play_battle_card(card):
 		hand.remove_child(card)
 		discard_area.add_child(card)
 		adjust_hand_spacing()
+		selectedCardIndex -= 1
 		highlight_card(selectedCardIndex)
 	else:
 		print("unknown card type: " + str(card.type))
@@ -202,6 +204,8 @@ func fight(player_attack, player_defense, enemy_attack, enemy_defense):
 		texts_to_show.append("[color=#000000]You can't go on like this![/color]")
 		fleeing = true
 	elif enemy.currentHealth <= 0:
+		staticTween.interpolate_property(enemy, "self_modulate", enemy.self_modulate, Color(1, 1, 1, 0), 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		staticTween.start()
 		texts_to_show.append("[color=#000000]Piece of cake. You beat it.[/color]")
 		texts_to_show.append("[color=#000000]Gained 50 EXP![/color]")
 		game_manager.player_data.experience += 50
