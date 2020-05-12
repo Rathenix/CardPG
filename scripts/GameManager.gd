@@ -6,6 +6,7 @@ const SAVE_2 = "res://data/saves/save_2.json"
 
 # the game scenes that can be accessed by the game_manager
 var title_scene = preload("res://scenes/TitleScreen.tscn")
+var menu_scene = preload("res://scenes/Menu.tscn")
 var overworld_scene = preload("res://scenes/World.tscn")
 var battle_scene = preload("res://scenes/Battle.tscn")
 #var scene_selector_scene = preload("res://scenes/scene_selector.tscn")
@@ -14,6 +15,7 @@ var battle_scene = preload("res://scenes/Battle.tscn")
 # a dictionary to look up the scene objects by a name
 var scenes = {
 	"title_screen": title_scene,
+	"menu": menu_scene,
 	"overworld": overworld_scene,
 	"battle": battle_scene
 }
@@ -21,6 +23,7 @@ var scenes = {
 #player stats
 var player_data = { 
 	"save": "unsaved",
+	"player_name": "Wizard",
 	"max_health": 10,
 	"current_health": 10,
 	"attack": 0,
@@ -47,7 +50,7 @@ func _ready():
 # removes the current scene from the tree and then loads a new current scene into the tree by name
 func load_new_scene(scene_name):
 	current_primary_scene.queue_free()
-	current_primary_scene = scenes[scene_name].instance()	
+	current_primary_scene = scenes[scene_name].instance()
 	add_child(current_primary_scene)
 
 # loads a scene into the tree on top of the current scene and gives the scene on top control
@@ -81,8 +84,7 @@ func close_all_scenes_on_top():
 	get_tree().paused = false;
 		
 func _input(event):
-	if event.is_action_pressed("menu"):
-		save_player_data_to_file(player_data.save)
+	pass
 
 func set_player_location(node_name, offset):
 	var pos = current_primary_scene.get_node(node_name).get_position() + offset
@@ -111,6 +113,8 @@ func save_player_data_to_file(filename):
 func load_player_data_from_file(filename):
 	var player_json = load_json_from_file(filename)
 	if player_json != {}:
+		player_data.save = str(player_json.save)
+		player_data.player_name = str(player_json.player_name)
 		player_data.max_health = int(player_json.max_health)
 		player_data.current_health = int(player_json.current_health)
 		player_data.attack = int(player_json.attack)

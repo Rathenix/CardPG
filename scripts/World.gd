@@ -27,6 +27,8 @@ func _ready():
 	fade_tween.start()
 
 func _process(delta):
+	if Input.is_action_just_pressed("menu"):
+		game_manager.load_scene_on_top("menu")
 	update_camera()
 
 func set_player_pos(): 
